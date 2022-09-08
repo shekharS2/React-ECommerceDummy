@@ -54,10 +54,13 @@ function App() {
 	return (
 		<div className="app">
 			<Header headerText={showProdPage ? 'Product Page' : 'All Products'} />
-			<span>
-				<CategoryFilter handleCategoryFilter={handleCategoryFilter} handleClearCategoryFilter={handleClearCategoryFilter} />
-			</span>
-	        <button className='app__clear-filter-btn' onClick={handleClearCategoryFilter}>Clear Filter</button>
+			{!showProdPage && 
+			<div className='app__filter'>
+				<span>
+					<CategoryFilter handleCategoryFilter={handleCategoryFilter} handleClearCategoryFilter={handleClearCategoryFilter} />
+				</span>
+				<button className='app__clear-filter-btn' onClick={handleClearCategoryFilter}>Clear Filter</button>
+			</div>}
 			<div className='app-container'>
 				{showProdPage && productPageId ? 
 				<ProductPage prodId={productPageId} handleShowProdPage={handleShowProdPage} />

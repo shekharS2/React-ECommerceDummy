@@ -24,6 +24,10 @@
     width: 100%;
 }
 
+.app__filter {
+    text-align: center;
+}
+
 .app__clear-filter-btn {
     margin: 10px;
     padding: 10px;
